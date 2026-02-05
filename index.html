@@ -589,6 +589,90 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
+        /* Leadership Section */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .leadership-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .leadership-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(255, 0, 170, 0.15) 0%, transparent 70%);
+            border-radius: 0 12px 0 100%;
+            transition: all 0.4s ease;
+        }
+
+        .leadership-card:hover {
+            border-color: rgba(255, 0, 170, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .leadership-card:hover::before {
+            width: 120px;
+            height: 120px;
+        }
+
+        .leadership-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 0, 170, 0.1);
+            border: 2px solid rgba(255, 0, 170, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .leadership-role {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .leadership-org {
+            color: var(--accent-tertiary);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .leadership-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
         /* Contact Section */
         .contact-grid {
             display: grid;
@@ -706,6 +790,7 @@
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#publications">Publications</a></li>
+                        <li><a href="#leadership">Leadership</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -807,7 +892,7 @@
                 </div>
                 <div class="projects-grid">
                     <div class="project-card reveal">
-                        <div class="project-icon"></div>
+                        <div class="project-icon">🔋</div>
                         <h3 class="project-title">Physics-Informed Neural Network for Battery SOC</h3>
                         <p class="project-description">
                             Developed a PINN to predict battery state-of-charge from EIS data, integrating physical constraints into the loss function for physically consistent predictions with 96% accuracy.
@@ -822,7 +907,7 @@
                     </div>
 
                     <div class="project-card reveal">
-                        <div class="project-icon"></div>
+                        <div class="project-icon">😊</div>
                         <h3 class="project-title">Hybrid Deep Learning for Facial Expression Recognition</h3>
                         <p class="project-description">
                             GPU-accelerated ResNet50 + Transformer encoder hybrid with landmark-inspired spatial attention, achieving 12% accuracy improvement over baseline CNN.
@@ -837,7 +922,7 @@
                     </div>
 
                     <div class="project-card reveal">
-                        <div class="project-icon"></div>
+                        <div class="project-icon">📈</div>
                         <h3 class="project-title">Gold Price Predictor</h3>
                         <p class="project-description">
                             Forecasted gold prices using macroeconomic indicators on 10,000+ entries. Applied ensemble regressors (Random Forest, XGBoost) with 14% R² improvement over baseline.
@@ -954,6 +1039,55 @@
                         <span class="publication-badge">In Preparation</span>
                         <h3 class="publication-title">Physics-Informed Neural Networks for Accurate and Physically Consistent Battery State-of-Charge Prediction</h3>
                         <p class="publication-meta">Manuscript in preparation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Achievements Section -->
+        <section id="leadership">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">// Leadership</div>
+                    <h2>Positions & Achievements</h2>
+                    <p class="section-description">
+                        Leading technical communities and organizing impactful events in the AI and technology space.
+                    </p>
+                </div>
+                <div class="leadership-grid">
+                    <div class="leadership-card reveal">
+                        <div class="leadership-icon">👑</div>
+                        <h3 class="leadership-role">Chair, IEEE Computer Society</h3>
+                        <div class="leadership-org">IEEE NMIT Student Branch</div>
+                        <span class="leadership-date">2026</span>
+                    </div>
+
+                    <div class="leadership-card reveal">
+                        <div class="leadership-icon">🎯</div>
+                        <h3 class="leadership-role">Vice Chair</h3>
+                        <div class="leadership-org">IEEE NMIT Student Branch</div>
+                        <span class="leadership-date">2024</span>
+                    </div>
+
+                    <div class="leadership-card reveal">
+                        <div class="leadership-icon">💻</div>
+                        <h3 class="leadership-role">Technical Team Member</h3>
+                        <div class="leadership-org">Google Development Group, NMIT</div>
+                        <span class="leadership-date">2024</span>
+                    </div>
+
+                    <div class="leadership-card reveal">
+                        <div class="leadership-icon">🏆</div>
+                        <h3 class="leadership-role">CTF Challenge Designer</h3>
+                        <div class="leadership-org">Code Sprints - Google Development Group, NMIT</div>
+                        <span class="leadership-date">2025</span>
+                    </div>
+
+                    <div class="leadership-card reveal">
+                        <div class="leadership-icon">📚</div>
+                        <h3 class="leadership-role">Student Organizer</h3>
+                        <div class="leadership-org">Faculty Development Program, NMIT</div>
+                        <span class="leadership-date">2025</span>
                     </div>
                 </div>
             </div>
