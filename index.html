@@ -3,366 +3,905 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amruthamsha P Raju | Research</title>
+<title>Amruthamsha P Raju</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #0F1420;
-    --panel: #171E2E;
-    --panel-hi: #1D2538;
-    --ink: #E8E6DE;
-    --muted: #8B92A5;
-    --brass: #C9A227;
-    --brass-dim: #8F7420;
-    --edge: #5B7B9A;
-    --rule: #262E42;
-    --serif: 'Fraunces', serif;
-    --sans: 'Inter', sans-serif;
-    --mono: 'JetBrains Mono', monospace;
+    --ink:#14181a;
+    --surface:#1c2224;
+    --surface-2:#20272a;
+    --hairline:#333b3d;
+    --text:#e9e6dc;
+    --text-dim:#9aa3a3;
+    --patina:#8fbf9f;
+    --copper:#c9793f;
+    --max:920px;
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
+  *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--sans);
+    margin:0;
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--brass); text-decoration:none;}
+  a{color:var(--patina); text-decoration:none;}
   a:hover{text-decoration:underline;}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--brass); outline-offset:3px;}
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-  }
+  a:focus-visible, button:focus-visible{outline:2px solid var(--copper); outline-offset:3px;}
 
-  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
-
-  /* NAV */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(15,20,32,0.88);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--rule);
-  }
-  nav.wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:64px;
-  }
-  .brand{font-family:var(--serif); font-weight:500; font-size:1.05rem; color:var(--ink); letter-spacing:0.01em;}
-  .brand:hover{text-decoration:none; color:var(--brass);}
-  .navlinks{display:flex; gap:28px; font-size:0.88rem;}
-  .navlinks a{color:var(--muted);}
-  .navlinks a:hover{color:var(--ink); text-decoration:none;}
-  .navtoggle{display:none;}
-
-  /* HERO */
-  .hero{padding:96px 0 72px; position:relative; overflow:hidden;}
   .eyebrow{
-    font-family:var(--mono); font-size:0.78rem; color:var(--edge);
-    letter-spacing:0.08em; text-transform:uppercase; margin-bottom:18px;
-    display:flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:1.05rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--copper);
   }
-  .eyebrow::before{content:''; width:22px; height:1px; background:var(--edge); display:inline-block;}
-  h1.name{
-    font-family:var(--serif); font-weight:500; font-size:clamp(2.4rem, 5vw, 3.6rem);
-    line-height:1.05; letter-spacing:-0.01em; max-width:14ch;
-  }
-  .tagline{
-    margin-top:20px; font-size:1.08rem; color:var(--muted); max-width:52ch;
-  }
-  .hero-links{margin-top:32px; display:flex; gap:22px; flex-wrap:wrap; font-size:0.92rem;}
-  .hero-links a{
-    color:var(--ink); border-bottom:1px solid var(--rule); padding-bottom:2px;
-  }
-  .hero-links a:hover{border-color:var(--brass); color:var(--brass); text-decoration:none;}
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:600; margin:0; color:var(--text);}
 
-  /* CAUSAL GRAPH SIGNATURE */
-  .graph-wrap{
-    margin-top:64px; padding:28px 0 8px; border-top:1px solid var(--rule);
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky; top:0; z-index:10;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:18px 32px;
+    background:rgba(20,24,26,0.86);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--hairline);
   }
-  .graph-caption{font-family:var(--mono); font-size:0.72rem; color:var(--muted); margin-bottom:6px;}
-  svg.graph{width:100%; height:auto; display:block;}
-  .node circle{fill:var(--panel-hi); stroke:var(--edge); stroke-width:1.4;}
-  .node.root circle{fill:var(--brass); stroke:var(--brass); fill-opacity:0.18;}
-  .node text{fill:var(--ink); font-family:var(--mono); font-size:11.5px;}
-  .node.root text{fill:var(--brass); font-weight:500;}
-  .edge{stroke:var(--edge); stroke-width:1.2; stroke-dasharray:4 4; opacity:0.85;}
-  @keyframes dash{to{stroke-dashoffset:-16;}}
-  .edge{animation:dash 3.2s linear infinite;}
+  nav .brand{font-family:'IBM Plex Mono',monospace; font-size:0.85rem; color:var(--text);}
+  nav ul{list-style:none; display:flex; gap:22px; margin:0; padding:0;}
+  nav a{color:var(--text-dim); font-size:0.85rem;}
+  nav a:hover{color:var(--patina); text-decoration:none;}
 
-  /* SECTION SHELL */
-  section{padding:64px 0;}
-  section + section{border-top:1px solid var(--rule);}
-  .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:40px;}
-  .section-head h2{
-    font-family:var(--serif); font-weight:500; font-size:1.6rem; color:var(--ink);
+  section{max-width:var(--max); margin:0 auto; padding:64px 32px;}
+  section + section{border-top:1px solid var(--hairline);}
+
+  /* ---------- Hero ---------- */
+  .hero{padding-top:80px; padding-bottom:56px; display:grid; grid-template-columns:1fr 1.25fr; gap:36px; align-items:center;}
+  .hero h1{font-size:2.6rem; line-height:1.1; margin-top:10px;}
+  .hero p.role{font-family:'IBM Plex Mono',monospace; color:var(--patina); font-size:0.95rem; margin-top:14px;}
+  .hero p.desc{color:var(--text-dim); margin-top:18px; max-width:52ch;}
+  .hero .links{margin-top:26px; display:flex; gap:18px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:0.82rem;}
+  .hero .cta-row{margin-top:22px; display:flex; gap:14px; flex-wrap:wrap;}
+  .cta-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:0.85rem; font-weight:500;
+    padding:11px 22px; border-radius:5px; display:inline-block;
   }
-  .section-head .n{font-family:var(--mono); font-size:0.78rem; color:var(--brass-dim);}
+  .cta-btn.primary{ background:var(--patina); color:var(--ink); border:1px solid var(--patina); }
+  .cta-btn.primary:hover{ background:#a3d4b1; text-decoration:none; }
+  .cta-btn.secondary{ background:transparent; color:var(--text); border:1px solid var(--hairline); }
+  .cta-btn.secondary:hover{ border-color:var(--copper); color:var(--copper); text-decoration:none; }
 
-  /* TIMELINE (earned sequence: actual research chronology) */
-  .timeline{position:relative; padding-left:28px;}
-  .timeline::before{
-    content:''; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--rule);
+  .hero-visual{display:flex; align-items:center; gap:14px;}
+  .nn-wrap{display:flex; justify-content:center; flex:1.1; min-width:0;}
+  .nn-wrap canvas{width:100%; max-width:230px; height:auto; aspect-ratio:230/210;}
+
+  .portrait-wrap{display:flex; justify-content:center; flex:0 0 auto;}
+  .portrait-wrap img{
+    width:190px; height:240px; object-fit:cover;
+    border-radius:6px; border:1px solid var(--hairline);
+    filter:grayscale(0.15) contrast(1.03);
   }
-  .tl-item{position:relative; padding-bottom:40px;}
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-item::before{
-    content:''; position:absolute; left:-28px; top:5px; width:11px; height:11px; border-radius:50%;
-    background:var(--bg); border:2px solid var(--edge);
+
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr;}
+    .hero-visual{order:-1; margin-bottom:8px;}
   }
-  .tl-date{font-family:var(--mono); font-size:0.75rem; color:var(--muted); margin-bottom:6px;}
-  .tl-title{font-family:var(--serif); font-size:1.15rem; font-weight:500; margin-bottom:8px;}
-  .tl-body{color:var(--muted); font-size:0.95rem; max-width:60ch;}
-
-  /* FEATURED WORK CARDS */
-  .work-card{
-    background:var(--panel); border:1px solid var(--rule); border-radius:6px;
-    padding:28px 30px; margin-bottom:20px;
+  @media (max-width:520px){
+    .hero-visual{flex-direction:column;}
+    .portrait-wrap img{width:210px; height:260px;}
   }
-  .work-head{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;}
-  .work-title{font-family:var(--serif); font-size:1.25rem; font-weight:500;}
-  .status{
-    font-family:var(--mono); font-size:0.7rem; letter-spacing:0.04em; text-transform:uppercase;
-    padding:4px 9px; border-radius:3px; white-space:nowrap; border:1px solid;
+
+  .about-grid{display:grid; grid-template-columns:1fr; gap:0;}
+
+  /* ---------- Stats bar ---------- */
+  .stats-bar{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:1px;
+    background:var(--hairline); border:1px solid var(--hairline); border-radius:6px; overflow:hidden;
+    margin-top:36px;
   }
-  .status.published{color:#9BD98A; border-color:#3A5C34; background:rgba(155,217,138,0.07);}
-  .status.review{color:var(--brass); border-color:var(--brass-dim); background:rgba(201,162,39,0.07);}
-  .status.prep{color:var(--edge); border-color:var(--edge); background:rgba(91,123,154,0.07);}
-  .work-desc{color:var(--muted); font-size:0.94rem; margin-top:12px; max-width:66ch;}
-  .work-meta{margin-top:16px; font-family:var(--mono); font-size:0.78rem; color:var(--muted); display:flex; gap:18px; flex-wrap:wrap;}
-  .work-meta a{color:var(--edge);}
-
-  /* PUBLICATIONS LIST */
-  .pub-group{margin-bottom:32px;}
-  .pub-group h3{
-    font-family:var(--mono); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em;
-    color:var(--brass-dim); margin-bottom:14px;
+  .stat{
+    background:var(--surface); padding:20px 14px; text-align:center;
   }
-  .pub{padding:12px 0; border-bottom:1px solid var(--rule); font-size:0.92rem;}
-  .pub:last-child{border-bottom:none;}
-  .pub .authors{color:var(--ink);}
-  .pub .venue{color:var(--muted);}
+  .stat .num{font-family:'Fraunces',serif; font-size:1.5rem; font-weight:600; color:var(--patina);}
+  .stat .lbl{font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--text-dim); margin-top:6px; letter-spacing:0.02em;}
+  @media (max-width:760px){ .stats-bar{grid-template-columns:repeat(2,1fr);} }
 
-  /* EXPERIENCE */
-  .exp-item{margin-bottom:28px;}
-  .exp-head{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
-  .exp-role{font-family:var(--serif); font-size:1.08rem; font-weight:500;}
-  .exp-org{color:var(--edge); font-size:0.9rem;}
-  .exp-date{font-family:var(--mono); font-size:0.78rem; color:var(--muted); white-space:nowrap;}
-  .exp-desc{color:var(--muted); font-size:0.92rem; margin-top:8px; max-width:64ch;}
+  /* ---------- Featured research card ---------- */
+  .featured-card{
+    margin-top:18px; border:1px solid var(--copper); border-radius:8px;
+    padding:26px 28px; background:linear-gradient(135deg, rgba(201,121,63,0.08), rgba(143,191,159,0.05));
+  }
+  .featured-card .eyebrow{color:var(--copper);}
+  .featured-card h3{font-size:1.25rem; margin-top:10px; line-height:1.35;}
+  .featured-card p{color:var(--text-dim); margin-top:10px; font-size:0.94rem;}
+  .featured-card .tagrow{margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;}
 
-  /* FOOTER */
-  footer{padding:56px 0 72px;}
-  .footer-links{display:flex; gap:24px; flex-wrap:wrap; margin-top:14px;}
-  .footer-note{color:var(--muted); font-size:0.85rem; margin-top:28px; font-family:var(--mono);}
+  /* ---------- Research keyword tags ---------- */
+  .research-tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;}
+  .research-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:0.82rem; padding:8px 16px;
+    border:1px solid var(--patina); border-radius:4px; color:var(--patina); background:rgba(143,191,159,0.06);
+  }
 
-  @media (max-width:640px){
-    .navlinks{display:none;}
-    .hero{padding:64px 0 48px;}
+  /* ---------- Publication cards ---------- */
+  .pub-card{
+    border:1px solid var(--hairline); border-radius:6px; padding:16px 18px; margin-bottom:12px; background:var(--surface);
+  }
+  .pub-card .pub-title{font-size:0.98rem; font-weight:600; color:var(--text); line-height:1.4;}
+  .pub-card .pub-meta{margin-top:6px; display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+  .pub-badge{
+    font-family:'IBM Plex Mono',monospace; font-size:0.7rem; padding:3px 9px; border-radius:12px;
+    background:rgba(201,121,63,0.12); color:var(--copper); border:1px solid rgba(201,121,63,0.35);
+  }
+  .pub-doi{font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--text-dim);}
+  .pub-actions{margin-top:10px; display:flex; gap:14px; align-items:center; flex-wrap:wrap;}
+  .pub-btn{
+    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; padding:6px 14px;
+    border:1px solid var(--patina); border-radius:4px; color:var(--patina);
+  }
+  .pub-btn:hover{background:rgba(143,191,159,0.1); text-decoration:none;}
+  .pub-card details{font-size:0.78rem;}
+  .pub-card summary{
+    cursor:pointer; color:var(--text-dim); font-family:'IBM Plex Mono',monospace; font-size:0.78rem; list-style:none;
+  }
+  .pub-card summary::-webkit-details-marker{display:none;}
+  .pub-card summary::before{content:"▸ "; color:var(--copper);}
+  .pub-card details[open] summary::before{content:"▾ "; }
+  .pub-card details p{margin-top:8px; color:var(--text-dim); font-size:0.82rem; font-style:italic; border-left:2px solid var(--hairline); padding-left:10px;}
+
+  /* ---------- Causal map section ---------- */
+  .causal-map-wrap{margin-top:20px; border:1px solid var(--hairline); border-radius:6px; overflow:hidden; background:#14181a;}
+  .causal-map-wrap svg{display:block; width:100%; height:auto;}
+
+  .cmap .node-circle.pulse-a, .cmap .node-circle.pulse-b{
+    animation: cmap-pulse 3.6s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .cmap .node-circle.pulse-b{ animation-delay: 1.2s; }
+  .cmap .node-box{
+    animation: cmap-glow 4.5s ease-in-out infinite;
+  }
+  .cmap .edge{
+    stroke-dasharray:none;
+  }
+  .cmap .edge.dashed{
+    stroke-dasharray:5 5;
+    animation: cmap-flow-slow 2.4s linear infinite;
+  }
+  .cmap .travel-dot{
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes cmap-pulse{
+    0%, 100%{ opacity:0.92; transform:scale(1); }
+    50%{ opacity:1; transform:scale(1.035); }
+  }
+  @keyframes cmap-glow{
+    0%, 100%{ opacity:1; }
+    50%{ opacity:0.86; }
+  }
+  @keyframes cmap-flow{
+    to{ stroke-dashoffset:-26; }
+  }
+  @keyframes cmap-flow-slow{
+    to{ stroke-dashoffset:-20; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cmap .node-circle, .cmap .node-box, .cmap .edge.dashed, .cmap .travel-dot{ animation:none; }
+  }
+
+  /* ---------- About ---------- */
+  .about p{color:var(--text-dim); max-width:68ch;}
+
+  /* ---------- Experience ---------- */
+  .exp-item{display:grid; grid-template-columns:140px 1fr; gap:24px; padding:22px 0; border-bottom:1px solid var(--hairline);}
+  .exp-item:last-child{border-bottom:none;}
+  .exp-item .when{font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--text-dim); padding-top:4px;}
+  .exp-item h3{font-size:1.15rem;}
+  .exp-item .org{color:var(--patina); font-size:0.9rem; margin-top:2px;}
+  .exp-item ul{margin:10px 0 0; padding-left:18px; color:var(--text-dim); font-size:0.94rem;}
+  .exp-item li{margin-bottom:6px;}
+  @media (max-width:600px){ .exp-item{grid-template-columns:1fr;} }
+
+  /* ---------- Projects ---------- */
+  .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:10px;}
+  @media (max-width:700px){ .proj-grid{grid-template-columns:1fr;} }
+  .card{
+    background:var(--surface); border:1px solid var(--hairline); border-radius:4px;
+    padding:22px 24px;
+  }
+  .card .eyebrow{display:block; margin-bottom:8px;}
+  .card h3{font-size:1.08rem; margin-bottom:8px;}
+  .card p{color:var(--text-dim); font-size:0.9rem; margin:0 0 10px;}
+  .card .stack{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--copper); line-height:1.5;}
+
+  /* ---------- Publications ---------- */
+  .pub-group{margin-top:22px;}
+  .pub-group h3{font-size:0.95rem; color:var(--patina); font-family:'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:0.06em; font-weight:500; margin-bottom:12px;}
+  .pub-group ul{margin:0; padding-left:18px; color:var(--text-dim); font-size:0.92rem;}
+  .pub-group li{margin-bottom:9px;}
+
+  /* ---------- Skills ---------- */
+  .skill-block{margin-bottom:20px;}
+  .skill-block .label{font-family:'IBM Plex Mono',monospace; font-size:1.05rem; color:var(--copper); margin-bottom:8px; display:block;}
+  .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-size:0.82rem; padding:5px 12px; border:1px solid var(--hairline); border-radius:20px;
+    color:var(--text); background:var(--surface);
+  }
+
+  /* ---------- Achievements ---------- */
+  .ach-list{list-style:none; margin:0; padding:0; display:grid; gap:12px;}
+  .ach-list li{padding-left:18px; position:relative; color:var(--text-dim); font-size:0.94rem;}
+  .ach-list li::before{content:"\27a4"; position:absolute; left:0; color:var(--copper);}
+
+  /* ---------- Footer ---------- */
+  footer{padding:48px 32px 60px; text-align:center;}
+  footer .eyebrow{display:block; margin-bottom:10px;}
+  footer .contact-links{display:flex; gap:24px; justify-content:center; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:0.85rem; margin-top:14px;}
+  footer .fine{margin-top:30px; color:var(--text-dim); font-size:0.78rem;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
   }
 </style>
 </head>
 <body>
 
-<header>
-  <nav class="wrap">
-    <a href="#top" class="brand">A. P. Raju</a>
-    <div class="navlinks">
-      <a href="#work">Work</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+<nav>
+  <span class="brand">APR_</span>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-visual">
+    <div class="portrait-wrap">
+      <img src="photo.jpg" alt="Portrait of Amruthamsha P Raju">
     </div>
-  </nav>
-</header>
-
-<main>
-  <div class="wrap">
-    <section class="hero" id="top">
-      <p class="eyebrow">AI &amp; Data Science · Bengaluru, India</p>
-      <h1 class="name">Amruthamsha P Raju</h1>
-      <p class="tagline">
-        Researching how learning systems make reliable sequential decisions under uncertainty,
-        through causal reinforcement learning, physics-informed models, and adaptive multi-agent
-        systems. Currently at CAIR, DRDO.
-      </p>
-      <div class="hero-links">
-        <a href="#" target="_blank" rel="noopener">CV</a>
-        <a href="https://github.com/Amruthamsha" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/amruthamsha" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:amruthamsha28@gmail.com">Email</a>
-      </div>
-
-      <div class="graph-wrap">
-        <p class="graph-caption">// the structural causal model behind CER-SCM, sketched from its own object</p>
-        <svg class="graph" viewBox="0 0 980 300" role="img" aria-label="Diagram of structural causal graph connecting research threads to the central question of reliable decision-making under uncertainty">
-          <line class="edge" x1="150" y1="60" x2="450" y2="150"/>
-          <line class="edge" x1="150" y1="240" x2="450" y2="150"/>
-          <line class="edge" x1="510" y1="150" x2="810" y2="60"/>
-          <line class="edge" x1="510" y1="150" x2="810" y2="150"/>
-          <line class="edge" x1="510" y1="150" x2="810" y2="240"/>
-
-          <g class="node"><circle cx="150" cy="60" r="6"/><text x="164" y="64">causal RL</text></g>
-          <g class="node"><circle cx="150" cy="240" r="6"/><text x="164" y="244">physics-informed NNs</text></g>
-
-          <g class="node root">
-            <circle cx="480" cy="150" r="9"/>
-            <text x="480" y="95" text-anchor="middle">reliable decision-making,</text>
-            <text x="480" y="113" text-anchor="middle">under uncertainty</text>
-          </g>
-
-          <g class="node"><circle cx="810" cy="60" r="6"/><text x="794" y="64" text-anchor="end">multi-agent systems</text></g>
-          <g class="node"><circle cx="810" cy="150" r="6"/><text x="794" y="154" text-anchor="end">financial markets</text></g>
-          <g class="node"><circle cx="810" cy="240" r="6"/><text x="794" y="244" text-anchor="end">materials &amp; electrochemistry</text></g>
-        </svg>
-      </div>
-    </section>
-
-    <section id="narrative">
-      <div class="section-head"><h2>Research trajectory</h2></div>
-      <div class="timeline">
-        <div class="tl-item">
-          <p class="tl-date">Aug 2024 to Oct 2024 · CeNS</p>
-          <p class="tl-title">Trusting a noisy signal</p>
-          <p class="tl-body">Estimated heavy-metal ion concentrations from electrochemical voltammetry data. The largest error reductions came from feature engineering that preserved interpretability of the underlying structure-property relationship, not from added model capacity.</p>
-        </div>
-        <div class="tl-item">
-          <p class="tl-date">Aug 2025 to Feb 2026</p>
-          <p class="tl-title">Structure as a constraint</p>
-          <p class="tl-body">Built a physics-informed neural network for lithium-ion battery state-of-charge estimation, encoding electrochemical constraints directly into the training objective to hold up under distribution shift.</p>
-        </div>
-        <div class="tl-item">
-          <p class="tl-date">Jan 2026 to Aug 2026 · Final-year thesis</p>
-          <p class="tl-title">When the environment reacts to you</p>
-          <p class="tl-body">Developed CER-SCM: a structural causal model over market features, generating causally-grounded counterfactual transitions via do-calculus for financial RL agents, because the realized market trajectory can never be replayed under an alternative action.</p>
-        </div>
-        <div class="tl-item">
-          <p class="tl-date">Jul 2026 to Present · CAIR, DRDO</p>
-          <p class="tl-title">When the information itself is unreliable</p>
-          <p class="tl-body">Developing AGAKA, a hierarchical multi-agent framework for maritime intelligence, where document-scoring thresholds adapt to source reliability that changes over time.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="section-head"><h2>Featured work</h2></div>
-
-      <div class="work-card">
-        <div class="work-head">
-          <span class="work-title">Counterfactual Experience Replay via Structural Causal Models</span>
-          <span class="status review">In revision</span>
-        </div>
-        <p class="work-desc">Causal RL framework for financial decision-making under non-stationarity. Learns a causal graph over market features and generates counterfactual transitions via Pearl's do-calculus, paired with a variance-penalized policy objective. Evaluated across 30 assets and multiple market regimes, including the COVID-19 crash and the 2022 bear market.</p>
-        <div class="work-meta">
-          <span>Targeting an IEEE Transactions journal</span>
-          <a href="https://github.com/Amruthamsha/cer-scm-financial-rl" target="_blank" rel="noopener">Code →</a>
-        </div>
-      </div>
-
-      <div class="work-card">
-        <div class="work-head">
-          <span class="work-title">AGAKA: Hierarchical Multi-Agent Framework for Maritime Intelligence</span>
-          <span class="status prep">In preparation</span>
-        </div>
-        <p class="work-desc">Developed at CAIR, DRDO. A decision agent accepts or rejects incoming documents using a learned, reliability-adaptive threshold; feedback loops update scoring weights and acquisition priorities as source reliability shifts over time.</p>
-        <div class="work-meta"><span>Benchmarking against static-threshold baselines across maritime intelligence feeds</span></div>
-      </div>
-
-      <div class="work-card">
-        <div class="work-head">
-          <span class="work-title">Physics-Informed Neural Networks for Li-ion Battery SoC Estimation</span>
-          <span class="status review">Under review</span>
-        </div>
-        <p class="work-desc">Incorporates electrochemical physical constraints into the training objective for physically-consistent state-of-charge prediction under distribution shift.</p>
-        <div class="work-meta">
-          <span>Electric Power Systems Research (Elsevier) · EPSR-D-26-07761</span>
-          <a href="https://github.com/Amruthamsha/PINNs_SoC" target="_blank" rel="noopener">Code →</a>
-        </div>
-      </div>
-
-      <div class="work-card">
-        <div class="work-head">
-          <span class="work-title">Squeeze-and-Excitation Placement in Residual Networks for FER</span>
-          <span class="status published">Published</span>
-        </div>
-        <p class="work-desc">Hybrid ResNet50/SE architecture for facial emotion recognition, improving accuracy over baseline CNN models through systematic placement of squeeze-and-excitation blocks.</p>
-        <div class="work-meta">
-          <span>Array, Vol. 31, Elsevier · Sept 2026</span>
-          <a href="https://github.com/Amruthamsha/ResSENet" target="_blank" rel="noopener">Code →</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="publications">
-      <div class="section-head"><h2>Publications</h2></div>
-
-      <div class="pub-group">
-        <h3>Published</h3>
-        <div class="pub"><span class="authors">Raju, A.P., Sudhakar, K., Rubini, P.</span>: "<a href="https://doi.org/10.1016/j.array.2026.101163" target="_blank" rel="noopener">Investigating Squeeze-and-Excitation Placement in Residual Networks for Facial Emotion Recognition</a>," <span class="venue">Array, Vol. 31, Article 101163, Elsevier, September 2026.</span></div>
-        <div class="pub"><span class="authors">Raju, A.P., Ramesh, D., Naik, P., Jayaprakash, G.K.</span>: "<a href="https://books.google.co.in/books?hl=en&lr=&id=-TSUEQAAQBAJ&oi=fnd&pg=PA27&dq=info:ONlqcSu08IUJ:scholar.google.com&ots=JIBlpONShg&sig=VtECism-qrjefmKFQIY-ZAhlriE&redir_esc=y#v=onepage&q&f=false" target="_blank" rel="noopener">Enhancing Predictive Accuracy Through Quantum AI</a>," <span class="venue">De Gruyter, 2024. DOI: 10.1515/9783111619323-002.</span></div>
-        <div class="pub"><span class="authors">Raju, A.P.</span>: "<a href="https://researchjournalnmit.wordpress.com/the-rise-of-artificial-intelligence-in-healthcare-systems/" target="_blank" rel="noopener">The Rise of Artificial Intelligence in Healthcare Systems</a>," <span class="venue">ANUSANDHANA: Journal of Science, Engineering and Management, Vol. 13, Issue 1, July 2025.</span></div>
-      </div>
-
-      <div class="pub-group">
-        <h3>Under review / in press</h3>
-        <div class="pub"><span class="authors">Raju, A.P.</span>: "The Role of AI and Machine Learning in Corrosion Prevention in Batteries," <span class="venue">Elsevier (in press).</span></div>
-        <div class="pub"><span class="authors">Raju, A.P., Sudhakar, K., Rubini, P.</span>: "NeuroDB: Toward a Neuromorphic Database Engine," <span class="venue">Journal of Experimental and Theoretical Artificial Intelligence (under review).</span></div>
-        <div class="pub"><span class="authors">Raju, A.P., Bandi, R., Jayaprakash, G.K., Ibrahim, A.B.M., Naik, P.</span>: "PINNs for Lithium-Ion Battery State-of-Charge Estimation via EIS," <span class="venue">Electric Power Systems Research, Elsevier (under review).</span></div>
-        <div class="pub"><span class="authors">Raju, A.P., Keremane, K.S., Ramesh, D., Elia, L., Babu, D.D., Naik, P.</span>: "Recent Advances in Supramolecular Materials for Bionic Skin: A Review," <span class="venue">ACS Applied Bio Materials (under review).</span></div>
-        <div class="pub"><span class="authors">Raju, A.P.</span>: "Recent Advances in Sustainable Carbon Quantum Dots," <span class="venue">Current Nanoscience, Bentham Science (under review).</span></div>
-        <div class="pub"><span class="authors">Raju, A.P.</span>: "Self-Powered Electrochemical Sensors for Energy Harvesting and Storage," <span class="venue">RSC (under review).</span></div>
-      </div>
-
-      <div class="pub-group">
-        <h3>Book</h3>
-        <div class="pub"><span class="authors">Raju, A.P.</span>: <a href="https://www.amazon.in/Am-Being-Fair-Question-Decision-ebook/dp/B0FVWFMNMF" target="_blank" rel="noopener"><em>Am I Being Fair? The Question Behind Every Decision That Matters</em></a>, <span class="venue">Amazon KDP, 2026. ISBN 9798251273830.</span></div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="section-head"><h2>Experience</h2></div>
-
-      <div class="exp-item">
-        <div class="exp-head">
-          <div><p class="exp-role">Project Intern</p><p class="exp-org">CAIR, DRDO</p></div>
-          <p class="exp-date">Jul 2026 to Present</p>
-        </div>
-        <p class="exp-desc">Developing AGAKA, a hierarchical multi-agent framework for adaptive document-reliability scoring in maritime intelligence.</p>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-head">
-          <div><p class="exp-role">Project Intern</p><p class="exp-org">Latavya Technologies</p></div>
-          <p class="exp-date">Mar 2025 to Present</p>
-        </div>
-        <p class="exp-desc">RL and regression-based optimization for real-time parking-slot allocation under latency and incomplete-observability constraints; role-based access architecture with sensor fusion.</p>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-head">
-          <div><p class="exp-role">Research Outreach Intern</p><p class="exp-org">Centre for Nano and Soft Matter Sciences (CeNS)</p></div>
-          <p class="exp-date">Aug 2024 to Oct 2024</p>
-        </div>
-        <p class="exp-desc">ML models predicting heavy-metal ion concentration from electrochemical data; structure-property mapping to support inverse design.</p>
-      </div>
-    </section>
-
-    <footer id="contact">
-      <p class="eyebrow" style="margin-bottom:10px;">Get in touch</p>
-      <p class="tagline" style="max-width:48ch; font-size:1rem;">Reach out about research or collaboration.</p>
-      <p class="footer-note" style="margin-top:18px;">// wrote a whole book asking "is this fair?" then built a trading agent around asking the same question of a Q-function</p>
-      <div class="footer-links">
-        <a href="mailto:amruthamsha28@gmail.com">amruthamsha28@gmail.com</a>
-        <a href="https://github.com/Amruthamsha" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/amruthamsha" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-      <p class="footer-note">Bengaluru, India</p>
-    </footer>
+    <div class="nn-wrap">
+      <canvas id="nn-canvas" width="230" height="210" aria-label="Animated neural network illustration" role="img"></canvas>
+    </div>
   </div>
-</main>
+  <div>
+    <span class="eyebrow">AI &amp; Data Science · NMIT Bengaluru</span>
+    <h1>Amruthamsha P Raju</h1>
+    <p class="role">AI &amp; Data Science Undergraduate · DRDO CAIR Research Intern · IEEE Computer Society Chair · Author · Building Causal AI &amp; Reinforcement Learning Systems</p>
+    <p class="desc">Building scalable ML systems for causal reinforcement learning, financial AI, and physics-informed battery diagnostics. Research Intern at DRDO CAIR with interests in trustworthy decision-making systems.</p>
+    <div class="links">
+      <a href="mailto:amruthamsha28@gmail.com">Email</a>
+      <a href="https://github.com/Amruthamsha" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/amruthamsha/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="cta-row">
+      <a class="cta-btn primary" href="amruthamsha-cv.pdf" download>Download CV</a>
+      <a class="cta-btn secondary" href="#publications">View Publications</a>
+    </div>
+  </div>
+</section>
 
+<section style="padding-top:0; border-top:none;">
+  <div class="stats-bar">
+    <div class="stat"><div class="num">9.73</div><div class="lbl">CGPA / 10</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">Peer-Reviewed Papers</div></div>
+    <div class="stat"><div class="num">1</div><div class="lbl">Published Book</div></div>
+    <div class="stat"><div class="num">DRDO</div><div class="lbl">CAIR Research Intern</div></div>
+    <div class="stat"><div class="num">IEEE</div><div class="lbl">Computer Society Chair</div></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <span class="eyebrow">About</span>
+  <div class="about-grid" style="margin-top:16px;">
+    <div>
+      <h2 style="font-size:1.6rem;">Focus</h2>
+      <p style="margin-top:16px;">Final-year B.E. student in Artificial Intelligence and Data Science at Nitte Meenakshi Institute of Technology, Bengaluru (CGPA 9.73/10, graduating 2027). Chair of the IEEE Computer Society Student Branch Chapter at NMIT. Research spans causal reinforcement learning, physics-informed neural networks, and the intersection of AI and electrochemistry, with a recurring interest in taking noisy, real-world signals (financial markets, battery impedance, sensor data) and building models that are both accurate and physically or causally grounded.</p>
+    </div>
+  </div>
+
+  <div class="research-tags">
+    <span class="research-tag">Causal Reinforcement Learning</span>
+    <span class="research-tag">Physics-Informed Neural Networks</span>
+    <span class="research-tag">Financial ML</span>
+    <span class="research-tag">Electrochemical AI</span>
+    <span class="research-tag">Edge AI &amp; Robotics</span>
+    <span class="research-tag">Graph-Based Causal Modeling</span>
+  </div>
+
+  <div class="featured-card">
+    <span class="eyebrow">Current Research · Final Year Thesis</span>
+    <h3>Counterfactual Experience Replay via Structural Causal Models for Financial Reinforcement Learning</h3>
+    <p>A causal RL framework combining Structural Causal Models with Counterfactual Experience Replay to improve sample efficiency under non-stationarity, trading across 30 assets in 5 sectors with causal graph-guided action masking.</p>
+    <div class="tagrow">
+      <span class="pub-badge">2026 – 2027</span>
+      <span class="pub-badge">PyTorch · DoWhy · NetworkX</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <span class="eyebrow">Experience</span>
+  <div style="margin-top:16px;">
+
+    <div class="exp-item">
+      <div class="when">07/2026 – 12/2026</div>
+      <div>
+        <h3>Project Intern</h3>
+        <div class="org">Centre for AI &amp; Robotics, DRDO</div>
+        <ul>
+          <li>Developing AGAKA, a multi-agent framework for adaptive information-reliability assessment in maritime intelligence applications.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">03/2025 – Present</div>
+      <div>
+        <h3>Project Intern</h3>
+        <div class="org">Latavya Technologies</div>
+        <ul>
+          <li>Designed reinforcement + regression-based optimization for real-time parking slot allocation, improving vehicle flow 20% and utilization 15%.</li>
+          <li>Built secure role-based architecture with OTP access, sensor fusion, and predictive time-slot decisioning, achieving 95% accurate tracking across large parking environments.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">08/2024 – 10/2024</div>
+      <div>
+        <h3>Research Outreach Intern</h3>
+        <div class="org"><a href="https://cens.res.in/en/alumni/rois" target="_blank" rel="noopener">Centre for Nano and Soft Matter Sciences (CeNS), Govt. of India</a></div>
+        <ul>
+          <li>Developed ML models (Random Forest, Gradient Boosting, SVR, Linear Regression) from electrochemical data to predict heavy metal ion concentration, achieving 94% accuracy, 30% noise reduction, and 45% interpretability gain.</li>
+          <li>Mapped structure–property relationships via electrochemical data modeling to support inverse design, collaborating across chemistry, AI, and instrumentation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="when">2024 – Present</div>
+      <div>
+        <h3>Chair, IEEE Computer Society Student Branch Chapter</h3>
+        <div class="org">IEEE, NMIT</div>
+        <ul>
+          <li>Leading the student chapter after serving as Vice Chair (2024) and Co-Chair of the Membership Development Committee.</li>
+          <li>Invited Guest Speaker at the IEEE Karnataka Computer Society Student Congress (2026).</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects">
+  <span class="eyebrow">Selected Projects</span>
+  <div class="proj-grid">
+
+    <div class="card">
+      <span class="eyebrow">Final Year Project · 2026–2027</span>
+      <h3>Counterfactual Experience Replay via SCMs for Financial RL</h3>
+      <p>Causal RL framework integrating Structural Causal Models with Counterfactual Experience Replay to improve sample efficiency in financial decision-making under non-stationarity. Dueling DQN and Discrete SAC across 30 assets in 5 sectors, with causal graph-guided action masking. Counterfactual augmentation reduced variance in cumulative returns vs. vanilla DQN.</p>
+      <div class="stack">Python · PyTorch · stable-baselines3 · DoWhy · NetworkX · yfinance</div>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Funded (₹70,000) · Ongoing</span>
+      <h3>Autonomous Tamarind Harvesting Robot</h3>
+      <p>Edge AI &amp; robotics project running YOLOv8n on a Hailo-8 NPU for real-time inference (85% detection accuracy). Full perception-to-actuation pipeline with a camera-aligned scoop mechanism on a 4WD suspended chassis, deployed via ONNX and the Hailo Dataflow Compiler on Raspberry Pi 5.</p>
+      <div class="stack">YOLOv8n · Hailo-8 · ONNX · Raspberry Pi 5</div>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Physics-Informed ML</span>
+      <h3>PINN for Battery State-of-Charge Prediction</h3>
+      <p>Physics-informed neural network predicting battery state-of-charge from EIS data, with impedance-magnitude correlation and smoothness constraints built into the loss function. Benchmarked against Random Forest, Gradient Boosting, and XGBoost, achieving 0.96 accuracy with physically consistent predictions.</p>
+      <div class="stack">TensorFlow/Keras · Scikit-learn · XGBoost</div>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Computer Vision</span>
+      <h3>Hybrid Deep Learning for Facial Expression Recognition</h3>
+      <p>GPU-accelerated ResNet50 + Transformer encoder hybrid with landmark-inspired spatial attention, achieving a 12% accuracy improvement over baseline CNN, validated on accuracy, precision, recall, and F1.</p>
+      <div class="stack">PyTorch · TensorFlow/Keras · CUDA · OpenCV</div>
+    </div>
+
+  </div>
+</section>
+
+<section id="publications">
+  <span class="eyebrow">Publications</span>
+
+  <div class="pub-group">
+    <h3>Book</h3>
+
+    <div class="pub-card">
+      <div class="pub-title">Am I Being Fair? The Question Behind Every Decision</div>
+      <div class="pub-meta">
+        <span class="pub-badge">Amazon KDP</span>
+        <span class="pub-badge">2026</span>
+        <span class="pub-doi">ISBN: 9798251273830</span>
+      </div>
+      <div class="pub-actions">
+        <a class="pub-btn" href="https://www.amazon.in/Am-Being-Fair-Question-Decision-ebook/dp/B0FVWFMNMF" target="_blank" rel="noopener">Read Book →</a>
+        <details>
+          <summary>View Citation</summary>
+          <p>Raju, Amruthamsha P. <em>Am I Being Fair? The Question Behind Every Decision.</em> Amazon Kindle Direct Publishing (KDP), 2026. ISBN: 9798251273830.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-group">
+    <h3>Peer-Reviewed</h3>
+
+    <div class="pub-card">
+      <div class="pub-title">Enhancing Predictive Accuracy Through Quantum AI</div>
+      <div class="pub-meta">
+        <span class="pub-badge">De Gruyter</span>
+        <span class="pub-badge">2024</span>
+        <span class="pub-doi">DOI: 10.1515/9783111619323-002</span>
+      </div>
+      <div class="pub-actions">
+        <a class="pub-btn" href="https://books.google.co.in/books?hl=en&lr=&id=-TSUEQAAQBAJ&oi=fnd&pg=PA27&dq=info:ONlqcSu08IUJ:scholar.google.com&ots=JIDnmOJMff&sig=XXdou5NuWrELJ7etPkO7LjXIr9Y&redir_esc=y#v=onepage&q&f=false" target="_blank" rel="noopener">Read Paper →</a>
+        <details>
+          <summary>View Citation</summary>
+          <p>Raju, Amruthamsha P., Ramesh, Disha, Naik, Praveen, and Jayaprakash, Gururaj Kudur. "Enhancing Predictive Accuracy Through Quantum AI." De Gruyter, 2024. DOI: 10.1515/9783111619323-002.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title">Investigating Squeeze-and-Excitation Placement in Residual Networks for Facial Emotion Recognition</div>
+      <div class="pub-meta">
+        <span class="pub-badge">Array</span>
+        <span class="pub-badge">Vol. 31, Elsevier · Sept 2026</span>
+        <span class="pub-doi">DOI: 10.1016/j.array.2026.101163</span>
+      </div>
+      <div class="pub-actions">
+        <a class="pub-btn" href="https://doi.org/10.1016/j.array.2026.101163" target="_blank" rel="noopener">Read Paper →</a>
+        <details>
+          <summary>View Citation</summary>
+          <p>Raju, Amruthamsha P., Sudhakar, K., Rubini, P. "Investigating Squeeze-and-Excitation Placement in Residual Networks for Facial Emotion Recognition." Array, Vol. 31, Article 101163, Elsevier, September 2026.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title">The Rise of Artificial Intelligence in Healthcare Systems</div>
+      <div class="pub-meta">
+        <span class="pub-badge">ANUSANDHANA</span>
+        <span class="pub-badge">Vol. 13, Issue 1 · 2025</span>
+      </div>
+      <div class="pub-actions">
+        <a class="pub-btn" href="https://researchjournalnmit.wordpress.com/the-rise-of-artificial-intelligence-in-healthcare-systems/" target="_blank" rel="noopener">Read Paper →</a>
+        <details>
+          <summary>View Citation</summary>
+          <p>P. Raju, A. "The Rise of Artificial Intelligence in Healthcare Systems." ANUSANDHANA: Journal of Science, Engineering and Management, Vol. 13, Issue 1, July 2025.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="pub-group">
+    <h3>Research Pipeline (Under Review / In Press / Pre-print)</h3>
+
+    <div class="pub-card">
+      <div class="pub-title">The Role of Artificial Intelligence and Machine Learning in Corrosion Prevention in Batteries</div>
+      <div class="pub-meta">
+        <span class="pub-badge">Elsevier · in press</span>
+      </div>
+      <div class="pub-actions">
+        <details>
+          <summary>View Citation</summary>
+          <p>Raju, Amruthamsha P. "The Role of Artificial Intelligence and Machine Learning in Corrosion Prevention in Batteries." Elsevier (in press).</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title">A Review on the Advancement of Supramolecular Materials for Bionic Skin</div>
+      <div class="pub-meta"><span class="pub-badge">ACS Applied Bio Materials · under review</span></div>
+      <div class="pub-actions">
+        <details>
+          <summary>View Citation</summary>
+          <p>Raju, Amruthamsha P. "A Review on the Advancement of Supramolecular Materials for Bionic Skin." ACS Applied Bio Materials (under review).</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title">Recent Advances in Sustainable Carbon Quantum Dots: Interface Engineering for Optoelectronic, Bioimaging, and Theragnostic Technologies</div>
+      <div class="pub-meta"><span class="pub-badge">Bentham Science, Current Nanoscience · under review</span></div>
+      <div class="pub-actions">
+        <details>
+          <summary>View Citation</summary>
+          <p>Raju, Amruthamsha P. "Recent Advances in Sustainable Carbon Quantum Dots: Interface Engineering for Optoelectronic, Bioimaging, and Theragnostic Technologies." Bentham Science, Current Nanoscience (under review).</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title">NeuroDB: Toward a Neuromorphic Database Engine: Architecture Design, Theoretical Foundations, and Simulation-Based Performance Analysis</div>
+      <div class="pub-meta"><span class="pub-badge">Journal of Experimental and Theoretical Artificial Intelligence · under review</span></div>
+      <div class="pub-actions">
+        <details>
+          <summary>View Citation</summary>
+          <p>Raju, Amruthamsha P. "NeuroDB: Toward a Neuromorphic Database Engine: Architecture Design, Theoretical Foundations, and Simulation-Based Performance Analysis." Journal of Experimental and Theoretical Artificial Intelligence (under review).</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title">Physics-Informed Neural Networks for Lithium-Ion Battery State-of-Charge Estimation via Electrochemical Impedance Spectroscopy</div>
+      <div class="pub-meta"><span class="pub-badge">Electric Power Systems Research · Elsevier · under review</span></div>
+      <div class="pub-actions">
+        <details>
+          <summary>View Citation</summary>
+          <p>Raju, Amruthamsha P., Bandi, Revanasiddappa, Jayaprakash, Gururaj Kudur, Ibrahim, Ahmed B.M., Naik, Praveen. "Physics-Informed Neural Networks for Lithium-Ion Battery State-of-Charge Estimation via Electrochemical Impedance Spectroscopy." Electric Power Systems Research, Elsevier (under review, Manuscript No. EPSR-D-26-07761).</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-title">Self-Powered Electrochemical Sensors for Energy Harvesting and Storage</div>
+      <div class="pub-meta"><span class="pub-badge">RSC · under review</span></div>
+      <div class="pub-actions">
+        <details>
+          <summary>View Citation</summary>
+          <p>Raju, Amruthamsha P. "Self-Powered Electrochemical Sensors for Energy Harvesting and Storage." RSC (under review).</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <span class="eyebrow">Skills &amp; Certifications</span>
+
+  <div style="margin-top:20px;">
+    <div class="skill-block">
+      <span class="label">Programming</span>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">SQL</span><span class="tag">Java</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <span class="label">ML / Frameworks</span>
+      <div class="tags">
+        <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Scikit-learn</span>
+        <span class="tag">stable-baselines3</span><span class="tag">XGBoost</span><span class="tag">OpenCV</span><span class="tag">DoWhy</span>
+        <span class="tag">NetworkX</span><span class="tag">ONNX</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <span class="label">Tools &amp; Platforms</span>
+      <div class="tags">
+        <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Neo4j</span><span class="tag">Looker Studio</span>
+        <span class="tag">Git</span><span class="tag">Jupyter</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <span class="label">Wet Lab</span>
+      <div class="tags">
+        <span class="tag">FTIR sample prep</span><span class="tag">Cyclic Voltammetry</span><span class="tag">Differential Pulse Voltammetry</span><span class="tag">CHN/O Analyzer</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;">
+    <span class="label" style="font-family:'IBM Plex Mono',monospace; font-size:1.05rem; color:var(--copper);">Certifications</span>
+    <ul class="ach-list" style="margin-top:10px;">
+      <li>NPTEL: AI, Search Methods for Problem-Solving, IIT Madras (2024)</li>
+      <li>NPTEL: Introduction to Machine Learning, IIT Madras, Top 1% (2025)</li>
+      <li>NPTEL: Fundamentals of Object-Oriented Programming, IIT Roorkee, Top 2% (2026)</li>
+      <li>Udemy: Python for Machine Learning and Data Science Masterclass</li>
+      <li>Coursera: Functional Programming Principles in Scala, EPFL</li>
+      <li>Coursera: Application Programming Fundamentals</li>
+      <li>Microsoft Azure: Data Scientist</li>
+      <li>Infosys Springboard: Advanced Deep Learning</li>
+    </ul>
+  </div>
+
+  <div style="margin-top:32px;">
+    <span class="label" style="font-family:'IBM Plex Mono',monospace; font-size:1.05rem; color:var(--copper);">Achievements</span>
+    <ul class="ach-list" style="margin-top:10px;">
+      <li>Guest Speaker, IEEE Karnataka Computer Society Student Congress (2026)</li>
+      <li>IEEE Pravarthana Grant: authored and secured funding for a technical education outreach program at Singanayakanahalli Government School, reaching approximately 150 underprivileged students (2026)</li>
+      <li>Chair, IEEE Computer Society, NMIT (2026)</li>
+      <li>As Chair, led 4 technical programs reaching 648 participants across mathematical ML, computational AI, generative AI, multi-agent systems, remote sensing, and emerging computing</li>
+      <li>Coordinated technical sessions with researchers from DRDO CAIR and NIAS, and an industry-led session on Generative AI reaching 337 participants with two MathCo AI Engineers</li>
+      <li>Co-Chair, IEEE NMIT Student Branch Membership Development Committee (2026)</li>
+      <li>MathCo Ambassador (2026)</li>
+      <li>Vice Chair, IEEE NMIT Student Branch (2024)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="causal-map">
+  <span class="eyebrow">Causal Map</span>
+  <h2 style="margin-top:10px; font-size:1.6rem;">How it all connects</h2>
+  <p style="margin-top:14px; color:var(--text-dim); max-width:68ch;">A causal view of the CV itself: how foundations and experience feed into technical capability, how that capability produces the projects above, and how those projects translate into measurable outcomes and long-term goals.</p>
+  <div class="causal-map-wrap">
+<svg class="cmap" viewBox="0 0 1536 1040" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated causal graph of Amruthamsha P Raju's CV">
+<defs>
+  <marker id="cm-arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3f7fd1"/></marker>
+  <marker id="cm-arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4caf7d"/></marker>
+  <marker id="cm-arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8b6fd1"/></marker>
+  <marker id="cm-arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c9534f"/></marker>
+  <marker id="cm-arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8f8f"/></marker>
+</defs>
+<rect x="0" y="0" width="1536" height="1040" fill="#14181a"/>
+<text x="768.0" y="46" text-anchor="middle" font-family="Fraunces, serif" font-size="30" font-weight="600" fill="#e9e6dc">Causal Graph of My CV</text>
+<text x="768.0" y="76" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-style="italic" fill="#9fb3ab">How skills, experiences and projects causally contribute to impact and future goals</text>
+<text x="42" y="118" font-family='IBM Plex Mono, monospace' font-size="13" font-weight="600" fill="#7fb2ec">FOUNDATIONS</text>
+<rect class="node-box" x="40" y="138" width="235" height="110" rx="10" fill="#1b2a3d" stroke="#5b9bdc" stroke-width="1.6"/>
+<text x="56" y="166" font-size="13.5" font-weight="700" fill="#bcd6f5" text-anchor="start" font-family="Inter, sans-serif">Strong Academic Foundation</text>
+<text x="56" y="188.0" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">BE AI & DS</text>
+<text x="56" y="204.5" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">CGPA: 9.73/10</text>
+<rect class="node-box" x="40" y="268" width="235" height="110" rx="10" fill="#1b2a3d" stroke="#5b9bdc" stroke-width="1.6"/>
+<text x="56" y="296" font-size="13.5" font-weight="700" fill="#bcd6f5" text-anchor="start" font-family="Inter, sans-serif">Technical Skills</text>
+<text x="56" y="318.0" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Python, C/C++, SQL,</text>
+<text x="56" y="334.5" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">ML/DL Libraries,</text>
+<text x="56" y="351.0" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">PyTorch, TensorFlow,</text>
+<text x="56" y="367.5" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Scikit-learn, etc.</text>
+<rect class="node-box" x="40" y="398" width="235" height="110" rx="10" fill="#1b2a3d" stroke="#5b9bdc" stroke-width="1.6"/>
+<text x="56" y="426" font-size="13.5" font-weight="700" fill="#bcd6f5" text-anchor="start" font-family="Inter, sans-serif">Domain Knowledge</text>
+<text x="56" y="448.0" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">ML, Optimization,</text>
+<text x="56" y="464.5" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Robotics, Edge AI,</text>
+<text x="56" y="481.0" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Electrochemistry,</text>
+<text x="56" y="497.5" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Financial RL</text>
+<rect class="node-box" x="40" y="528" width="235" height="110" rx="10" fill="#1b2a3d" stroke="#5b9bdc" stroke-width="1.6"/>
+<text x="56" y="556" font-size="13.5" font-weight="700" fill="#bcd6f5" text-anchor="start" font-family="Inter, sans-serif">Tools & Platforms</text>
+<text x="56" y="578.0" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">GitHub, Docker,</text>
+<text x="56" y="594.5" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Kubernetes, Neo4j,</text>
+<text x="56" y="611.0" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Jupyter, VS Code,</text>
+<text x="56" y="627.5" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Looker Studio, etc.</text>
+<circle class="node-circle pulse-a" cx="390" cy="490" r="96" fill="#241c33" stroke="#a98fe0" stroke-width="2"/>
+<text x="390" y="474" font-size="15" font-weight="700" fill="#d9c9f5" text-anchor="middle" font-family="Inter, sans-serif">Strong Technical</text>
+<text x="390" y="493" font-size="15" font-weight="700" fill="#d9c9f5" text-anchor="middle" font-family="Inter, sans-serif">& Analytical</text>
+<text x="390" y="512" font-size="15" font-weight="700" fill="#d9c9f5" text-anchor="middle" font-family="Inter, sans-serif">Capability</text>
+<text x="390" y="524" font-size="11" fill="#c9b9ea" text-anchor="middle" font-family="Inter, sans-serif">Build, analyze and</text>
+<text x="390" y="539" font-size="11" fill="#c9b9ea" text-anchor="middle" font-family="Inter, sans-serif">optimize complex</text>
+<text x="390" y="554" font-size="11" fill="#c9b9ea" text-anchor="middle" font-family="Inter, sans-serif">systems and models</text>
+<path id="edge-found-0" class="edge edge-blue" d="M275,193.0 C315,193.0 268.4,386.05 308.4,386.05" fill="none" stroke="#5b9bdc" stroke-width="2" marker-end="url(#cm-arrow-blue)"/>
+<circle r="3" fill="#bcd6f5" class="travel-dot"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#edge-found-0"/></animateMotion></circle>
+<path id="edge-found-1" class="edge edge-blue" d="M275,323.0 C315,323.0 268.4,431.55 308.4,431.55" fill="none" stroke="#5b9bdc" stroke-width="2" marker-end="url(#cm-arrow-blue)"/>
+<circle r="3" fill="#bcd6f5" class="travel-dot"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#edge-found-1"/></animateMotion></circle>
+<path id="edge-found-2" class="edge edge-blue" d="M275,453.0 C315,453.0 268.4,477.05 308.4,477.05" fill="none" stroke="#5b9bdc" stroke-width="2" marker-end="url(#cm-arrow-blue)"/>
+<circle r="3" fill="#bcd6f5" class="travel-dot"><animateMotion dur="2.8000000000000003s" repeatCount="indefinite"><mpath href="#edge-found-2"/></animateMotion></circle>
+<path id="edge-found-3" class="edge edge-blue" d="M275,583.0 C315,583.0 268.4,522.55 308.4,522.55" fill="none" stroke="#5b9bdc" stroke-width="2" marker-end="url(#cm-arrow-blue)"/>
+<circle r="3" fill="#bcd6f5" class="travel-dot"><animateMotion dur="3.1s" repeatCount="indefinite"><mpath href="#edge-found-3"/></animateMotion></circle>
+<text x="700" y="118" font-family='IBM Plex Mono, monospace' font-size="13" font-weight="600" fill="#7dd9a0" text-anchor="middle">EXPERIENCE</text>
+<rect class="node-box" x="400" y="138" width="200" height="118" rx="10" fill="#16241c" stroke="#5fbf8a" stroke-width="1.6"/>
+<text x="500.0" y="162" font-size="13.5" font-weight="700" fill="#a7e6c2" text-anchor="middle" font-family="Inter, sans-serif">DRDO CAIR</text>
+<text x="500.0" y="178" font-size="11.5" font-weight="600" fill="#a7e6c2" text-anchor="middle" font-family="Inter, sans-serif">Project Intern</text>
+<text x="500.0" y="196" font-size="10.5" font-weight="500" fill="#8fbf9f" text-anchor="middle" font-family="Inter, sans-serif">07/2026 – 12/2026</text>
+<text x="500.0" y="218" font-size="10.8" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">AI & Robotics</text>
+<text x="500.0" y="233" font-size="10.8" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">(R&D Exposure)</text>
+<rect class="node-box" x="618" y="138" width="200" height="118" rx="10" fill="#16241c" stroke="#5fbf8a" stroke-width="1.6"/>
+<text x="718.0" y="162" font-size="13.5" font-weight="700" fill="#a7e6c2" text-anchor="middle" font-family="Inter, sans-serif">Latavya Technologies</text>
+<text x="718.0" y="178" font-size="11.5" font-weight="600" fill="#a7e6c2" text-anchor="middle" font-family="Inter, sans-serif">Project Intern</text>
+<text x="718.0" y="196" font-size="10.5" font-weight="500" fill="#8fbf9f" text-anchor="middle" font-family="Inter, sans-serif">03/2025 – Present</text>
+<text x="718.0" y="218" font-size="10.8" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">Optimization, Real-time</text>
+<text x="718.0" y="233" font-size="10.8" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">Systems, Deployment</text>
+<rect class="node-box" x="836" y="138" width="200" height="118" rx="10" fill="#16241c" stroke="#5fbf8a" stroke-width="1.6"/>
+<text x="936.0" y="162" font-size="13.5" font-weight="700" fill="#a7e6c2" text-anchor="middle" font-family="Inter, sans-serif">CeNS Research</text>
+<text x="936.0" y="178" font-size="11.5" font-weight="600" fill="#a7e6c2" text-anchor="middle" font-family="Inter, sans-serif">Outreach Intern</text>
+<text x="936.0" y="196" font-size="10.5" font-weight="500" fill="#8fbf9f" text-anchor="middle" font-family="Inter, sans-serif">08/2024 – 10/2024</text>
+<text x="936.0" y="218" font-size="10.8" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">ML on Electrochemical</text>
+<text x="936.0" y="233" font-size="10.8" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">Data, 94% Accuracy</text>
+<rect class="node-box" x="560" y="380" width="420" height="400" rx="12" fill="#2a2010" stroke="#e0a83e" stroke-width="1.6"/>
+<text x="578" y="406" font-family='IBM Plex Mono, monospace' font-size="12.5" font-weight="600" fill="#f3c96b">PROJECTS (Application of Skills)</text>
+<rect class="node-box" x="574" y="424" width="392" height="76" rx="8" fill="#332711" stroke="#caa053" stroke-width="1.2"/>
+<text x="590" y="446" font-size="12.3" font-weight="700" fill="#f0d9a0" text-anchor="start" font-family="Inter, sans-serif">Causal RL for Financial Decision Making (Ongoing)</text>
+<text x="590" y="464" font-size="10.8" fill="#d3c3a0" font-family="Inter, sans-serif">SCMs + Counterfactual Experience Replay, DQN, SAC</text>
+<text x="590" y="479" font-size="10.8" fill="#d3c3a0" font-family="Inter, sans-serif">Handles non-stationarity in financial markets</text>
+<rect class="node-box" x="574" y="510" width="392" height="76" rx="8" fill="#332711" stroke="#caa053" stroke-width="1.2"/>
+<text x="590" y="532" font-size="12.3" font-weight="700" fill="#f0d9a0" text-anchor="start" font-family="Inter, sans-serif">Autonomous Tamarind Harvesting Robot (Funded)</text>
+<text x="590" y="550" font-size="10.8" fill="#d3c3a0" font-family="Inter, sans-serif">YOLOv8n, Hailo-8 NPU, Edge Inference, Robotics</text>
+<text x="590" y="565" font-size="10.8" fill="#d3c3a0" font-family="Inter, sans-serif">Perception-to-actuation pipeline, Embedded AI</text>
+<rect class="node-box" x="574" y="596" width="392" height="76" rx="8" fill="#332711" stroke="#caa053" stroke-width="1.2"/>
+<text x="590" y="618" font-size="12.3" font-weight="700" fill="#f0d9a0" text-anchor="start" font-family="Inter, sans-serif">PINN for Battery State-of-Charge Prediction</text>
+<text x="590" y="636" font-size="10.8" fill="#d3c3a0" font-family="Inter, sans-serif">Physics-informed DL on EIS data</text>
+<text x="590" y="651" font-size="10.8" fill="#d3c3a0" font-family="Inter, sans-serif">Accuracy: 0.96</text>
+<rect class="node-box" x="574" y="682" width="392" height="76" rx="8" fill="#332711" stroke="#caa053" stroke-width="1.2"/>
+<text x="590" y="704" font-size="12.3" font-weight="700" fill="#f0d9a0" text-anchor="start" font-family="Inter, sans-serif">Hybrid Model for Facial Expression Recognition</text>
+<text x="590" y="722" font-size="10.8" fill="#d3c3a0" font-family="Inter, sans-serif">ResNet50 + Transformer, Spatial Attention</text>
+<text x="590" y="737" font-size="10.8" fill="#d3c3a0" font-family="Inter, sans-serif">12% accuracy improvement</text>
+<path id="edge-exp-0" class="edge edge-green" d="M500.0,256 C500.0,286 500.0,350 500.0,380" fill="none" stroke="#5fbf8a" stroke-width="2" marker-end="url(#cm-arrow-green)"/>
+<circle r="3" fill="#a7e6c2" class="travel-dot"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#edge-exp-0"/></animateMotion></circle>
+<path id="edge-exp-1" class="edge edge-green" d="M718.0,256 C718.0,286 718.0,350 718.0,380" fill="none" stroke="#5fbf8a" stroke-width="2" marker-end="url(#cm-arrow-green)"/>
+<circle r="3" fill="#a7e6c2" class="travel-dot"><animateMotion dur="2.05s" repeatCount="indefinite"><mpath href="#edge-exp-1"/></animateMotion></circle>
+<path id="edge-exp-2" class="edge edge-green" d="M936.0,256 C936.0,286 936.0,350 936.0,380" fill="none" stroke="#5fbf8a" stroke-width="2" marker-end="url(#cm-arrow-green)"/>
+<circle r="3" fill="#a7e6c2" class="travel-dot"><animateMotion dur="2.3s" repeatCount="indefinite"><mpath href="#edge-exp-2"/></animateMotion></circle>
+<text x="758.0" y="366" font-size="11" font-style="italic" fill="#7dd9a0" text-anchor="middle" font-family="Inter, sans-serif">Provides real-world problem exposure</text>
+<path id="edge-cap-proj" class="edge edge-purple" d="M486,490 L554,490" fill="none" stroke="#a98fe0" stroke-width="2.2" marker-end="url(#cm-arrow-purple)"/>
+<circle r="3.2" fill="#d9c9f5" class="travel-dot"><animateMotion dur="1.6s" repeatCount="indefinite"><mpath href="#edge-cap-proj"/></animateMotion></circle>
+<circle class="node-circle pulse-b" cx="1180" cy="490" r="105" fill="#331616" stroke="#e0847f" stroke-width="2"/>
+<text x="1180" y="438" font-size="12" font-style="italic" fill="#e0847f" text-anchor="middle" font-family="Inter, sans-serif">Leads to:</text>
+<text x="1180" y="464" font-size="15.5" font-weight="700" fill="#f5c9c7" text-anchor="middle" font-family="Inter, sans-serif">Measurable Impact</text>
+<text x="1180" y="483" font-size="15.5" font-weight="700" fill="#f5c9c7" text-anchor="middle" font-family="Inter, sans-serif">& Outcomes</text>
+<text x="1092" y="488.0" font-size="10.6" fill="#e0c2c0" font-family="Inter, sans-serif">• 20% ↑ vehicle flow</text>
+<text x="1092" y="503.5" font-size="10.6" fill="#e0c2c0" font-family="Inter, sans-serif">• 15% ↑ utilization</text>
+<text x="1092" y="519.0" font-size="10.6" fill="#e0c2c0" font-family="Inter, sans-serif">• 95% tracking accuracy</text>
+<text x="1092" y="534.5" font-size="10.6" fill="#e0c2c0" font-family="Inter, sans-serif">• 94% ML prediction accuracy</text>
+<text x="1092" y="550.0" font-size="10.6" fill="#e0c2c0" font-family="Inter, sans-serif">• Funded Project (₹70,000)</text>
+<text x="1092" y="565.5" font-size="10.6" fill="#e0c2c0" font-family="Inter, sans-serif">• 12% ↑ model accuracy</text>
+<path id="edge-proj-impact" class="edge edge-red" d="M980,580.0 L1069,490" fill="none" stroke="#e0847f" stroke-width="2.4" marker-end="url(#cm-arrow-red)"/>
+<circle r="3.4" fill="#f5c9c7" class="travel-dot"><animateMotion dur="1.7s" repeatCount="indefinite"><mpath href="#edge-proj-impact"/></animateMotion></circle>
+<rect class="node-box" x="1345" y="400" width="155" height="195" rx="10" fill="#1b2a3d" stroke="#5b9bdc" stroke-width="1.6"/>
+<text x="1422.5" y="428" font-size="13.5" font-weight="700" fill="#bcd6f5" text-anchor="middle" font-family="Inter, sans-serif">Long-term Goals</text>
+<text x="1422.5" y="448.0" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">Build scalable,</text>
+<text x="1422.5" y="461.5" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">production-ready</text>
+<text x="1422.5" y="475.0" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">ML systems for</text>
+<text x="1422.5" y="488.5" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">high-impact</text>
+<text x="1422.5" y="502.0" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">business problems</text>
+<text x="1422.5" y="515.5" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">and research</text>
+<text x="1422.5" y="529.0" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">advancing AI,</text>
+<text x="1422.5" y="542.5" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">robotics and</text>
+<text x="1422.5" y="556.0" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">causal decision</text>
+<text x="1422.5" y="569.5" font-size="10.3" fill="#c7cfd6" text-anchor="middle" font-family="Inter, sans-serif">making.</text>
+<path id="edge-impact-goals" class="edge edge-red" d="M1285,490 L1339,497.5" fill="none" stroke="#e0847f" stroke-width="2.2" marker-end="url(#cm-arrow-red)"/>
+<circle r="3.2" fill="#f5c9c7" class="travel-dot"><animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#edge-impact-goals"/></animateMotion></circle>
+<rect class="node-box" x="1000" y="760" width="335" height="130" rx="10" fill="#241c33" stroke="#a98fe0" stroke-width="1.6"/>
+<text x="1167.5" y="786" font-size="13" font-weight="700" fill="#d9c9f5" text-anchor="middle" font-family="Inter, sans-serif">Publications & Authorship</text>
+<text x="1020" y="812" font-size="11" fill="#cbb9ea" font-family="Inter, sans-serif">• Author of the book: “Am I Being Fair?”</text>
+<text x="1020" y="832" font-size="11" fill="#cbb9ea" font-family="Inter, sans-serif">• Book Chapter: Quantum AI for Decision Making</text>
+<text x="1020" y="852" font-size="11" fill="#cbb9ea" font-family="Inter, sans-serif">• Research Paper in ANUSANDHANA Journal</text>
+<path id="edge-pub-impact" class="edge edge-purple" d="M1167.5,760 C1167.5,720 1170,635 1170,599" fill="none" stroke="#a98fe0" stroke-width="2" marker-end="url(#cm-arrow-purple)"/>
+<circle r="3" fill="#d9c9f5" class="travel-dot"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#edge-pub-impact"/></animateMotion></circle>
+<text x="1237.5" y="714" font-size="10.5" font-style="italic" fill="#c9b9ea" text-anchor="middle" font-family="Inter, sans-serif">Reinforces credibility</text>
+<text x="1237.5" y="728" font-size="10.5" font-style="italic" fill="#c9b9ea" text-anchor="middle" font-family="Inter, sans-serif">&amp; thought leadership</text>
+<rect class="node-box-dashed" x="300" y="890" width="650" height="120" rx="10" fill="#20272a" stroke="#7a7f7f" stroke-width="1.4"/>
+<text x="625.0" y="914" font-size="12.5" font-weight="700" fill="#b9c0c0" text-anchor="middle" font-family='IBM Plex Mono, monospace'>ENABLING CONTEXT</text>
+<text x="365.0" y="942.0" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Curiosity &</text>
+<text x="365.0" y="955.5" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Problem Solving</text>
+<text x="365.0" y="969.0" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Mindset</text>
+<text x="495.0" y="942.0" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Research</text>
+<text x="495.0" y="955.5" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Orientation</text>
+<text x="625.0" y="942.0" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Cross-disciplinary</text>
+<text x="625.0" y="955.5" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Collaboration</text>
+<text x="755.0" y="942.0" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Continuous</text>
+<text x="755.0" y="955.5" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Learning</text>
+<text x="885.0" y="942.0" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Impact</text>
+<text x="885.0" y="955.5" font-size="10.5" fill="#a9b0b0" text-anchor="middle" font-family="Inter, sans-serif">Driven</text>
+<path class="edge edge-gray dashed" d="M390,890 L390,590" fill="none" stroke="#8a8f8f" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#cm-arrow-gray)"/>
+<path class="edge edge-gray dashed" d="M830,890 L770.0,784" fill="none" stroke="#8a8f8f" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#cm-arrow-gray)"/>
+<text x="40" y="800" font-size="12.5" font-weight="700" fill="#e9e6dc" font-family='IBM Plex Mono, monospace'>LEGEND</text>
+<rect x="40" y="809" width="16" height="16" rx="3" fill="#1b2a3d" stroke="#5b9bdc" stroke-width="1.4"/>
+<text x="64" y="821" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Foundations</text>
+<rect x="40" y="830" width="16" height="16" rx="3" fill="#16241c" stroke="#5fbf8a" stroke-width="1.4"/>
+<text x="64" y="842" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Experience</text>
+<rect x="40" y="851" width="16" height="16" rx="3" fill="#241c33" stroke="#a98fe0" stroke-width="1.4"/>
+<text x="64" y="863" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Capabilities</text>
+<rect x="40" y="872" width="16" height="16" rx="3" fill="#2a2010" stroke="#e0a83e" stroke-width="1.4"/>
+<text x="64" y="884" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Projects</text>
+<rect x="40" y="893" width="16" height="16" rx="3" fill="#331616" stroke="#e0847f" stroke-width="1.4"/>
+<text x="64" y="905" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Impact</text>
+<rect x="40" y="914" width="16" height="16" rx="3" fill="#1b2a3d" stroke="#5b9bdc" stroke-width="1.4"/>
+<text x="64" y="926" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Goals</text>
+<rect x="40" y="935" width="16" height="16" rx="3" fill="#241c33" stroke="#a98fe0" stroke-width="1.4"/>
+<text x="64" y="947" font-size="11.5" fill="#c7cfd6" font-family="Inter, sans-serif">Publications</text>
+<line x1="40" y1="973" x2="70" y2="973" stroke="#c7cfd6" stroke-width="1.6" marker-end="url(#cm-arrow-gray)"/>
+<text x="78" y="977" font-size="11" fill="#c7cfd6" font-family="Inter, sans-serif">Direct Causal Influence</text>
+<line x1="40" y1="995" x2="70" y2="995" stroke="#c7cfd6" stroke-width="1.6" stroke-dasharray="4 4" marker-end="url(#cm-arrow-gray)"/>
+<text x="78" y="999" font-size="11" fill="#c7cfd6" font-family="Inter, sans-serif">Enabling Influence</text>
+<rect x="1010" y="910" width="490" height="115" rx="8" fill="#1c2224" stroke="#3a4143" stroke-width="1.2"/>
+<text x="1026" y="932" font-size="12" font-weight="700" fill="#e9e6dc" font-family="Inter, sans-serif">How to read:</text>
+<text x="1026" y="952" font-size="11" fill="#a9b0b0" font-family="Inter, sans-serif">Left side (foundations) causally enable capabilities.</text>
+<text x="1026" y="969" font-size="11" fill="#a9b0b0" font-family="Inter, sans-serif">Experience provides real-world exposure that shapes projects.</text>
+<text x="1026" y="986" font-size="11" fill="#a9b0b0" font-family="Inter, sans-serif">Projects produce measurable impact, which drives long-term goals.</text>
+<text x="1026" y="1003" font-size="11" fill="#a9b0b0" font-family="Inter, sans-serif">Publications and context reinforce the impact and journey.</text>
+</svg>
+  </div>
+</section>
+
+<footer id="contact">
+  <span class="eyebrow">Get in touch</span>
+  <h2 style="margin-top:10px; font-size:1.5rem;">amruthamsha28@gmail.com</h2>
+  <div class="contact-links">
+    <a href="mailto:amruthamsha28@gmail.com">Email</a>
+    <a href="tel:+919606525101">+91 96065 25101</a>
+    <a href="https://github.com/Amruthamsha" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/amruthamsha/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#" onclick="return false;">Google Scholar</a>
+    <a href="#" onclick="return false;">ORCID</a>
+  </div>
+  <p class="fine">Amruthamsha P Raju · Bengaluru, India</p>
+</footer>
+
+<script>
+(function(){
+  const canvas = document.getElementById('nn-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const layerCounts = [4, 5, 4, 3];
+  const layerX = [24, 88, 152, 208];
+  const patina = '#8fbf9f', copper = '#c9793f', ink = '#1c2224', textCol = '#e9e6dc';
+
+  let layers = layerCounts.map((count, li) => {
+    const nodes = [];
+    for(let i=0;i<count;i++){
+      const baseY = (H/(count+1))*(i+1);
+      nodes.push({
+        x: layerX[li],
+        y: baseY,
+        baseY: baseY,
+        phase: Math.random()*Math.PI*2,
+        speed: 0.4 + Math.random()*0.5,
+        amp: 6 + Math.random()*6
+      });
+    }
+    return nodes;
+  });
+
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+
+    // update node positions (gentle vertical drift)
+    layers.forEach(nodes => {
+      nodes.forEach(n => {
+        n.y = n.baseY + Math.sin(t*0.001*n.speed + n.phase) * n.amp;
+      });
+    });
+
+    // draw connections
+    for(let li=0; li<layers.length-1; li++){
+      const a = layers[li], b = layers[li+1];
+      a.forEach((na, ia) => {
+        b.forEach((nb, ib) => {
+          const flicker = 0.12 + 0.10*Math.sin(t*0.0016 + ia*1.3 + ib*0.7 + li);
+          ctx.strokeStyle = (li%2===0) ? `rgba(143,191,159,${Math.max(0.06,flicker)})` : `rgba(201,121,63,${Math.max(0.05,flicker*0.8)})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(na.x, na.y);
+          ctx.lineTo(nb.x, nb.y);
+          ctx.stroke();
+        });
+      });
+    }
+
+    // draw nodes
+    layers.forEach((nodes, li) => {
+      nodes.forEach(n => {
+        const pulse = 3.2 + Math.sin(t*0.002 + n.phase)*1.1;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, pulse, 0, Math.PI*2);
+        ctx.fillStyle = ink;
+        ctx.fill();
+        ctx.lineWidth = 1.3;
+        ctx.strokeStyle = (li===0 || li===layers.length-1) ? copper : patina;
+        ctx.stroke();
+      });
+    });
+  }
+
+  let raf;
+  function loop(t){
+    draw(t);
+    raf = requestAnimationFrame(loop);
+  }
+
+  if(reduceMotion){
+    draw(0);
+  } else {
+    raf = requestAnimationFrame(loop);
+  }
+})();
+</script>
 </body>
 </html>
